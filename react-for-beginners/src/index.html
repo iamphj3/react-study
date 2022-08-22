@@ -9,34 +9,42 @@
     <script type="text/babel">
         const root = document.getElementById("root");
         function App() {
-            const [minutes, setMinutes] = React.useState();
+            const [amount, setAmount] = React.useState();
+            const [flipped, setflipped] = React.useState(false);
             const onChange = (event) => {
-                setMinutes(event.target.value);
+                setAmount(event.target.value);
             };
-            const reset = () => setMinutes(0);
+            const reset = () => setAmount(0);
+            const onFlip = () => { 
+                reset();
+                setflipped((current) => !current)
+            };
             return (
                 <div>
                     <div>
                         <h1 className="hi">Super Converter</h1>
                         <label htmlFor="minutes">Minutes</label>
                         <input 
-                            value={minutes}
+                            value={flipped ? amount * 60 : amount}
                             id="minutes"
                             placeholder="Minutes"
                             type="number"
                             onChange={onChange}
+                            disabled={flipped}
                         />
                     </div>
                     <div>   
                         <label htmlFor="hours">Hours</label>
                         <input 
-                            value={Math.round(minutes/60)}
+                            value={flipped ? amount : Math.round(amount/60)}
                             id="hours"
                             placeholder="Hours"
                             type="number"
                             onChange={onChange}
+                            disabled={!flipped}
                         />
                         <button onClick={reset}>Reset</button>
+                        <button onClick={onFlip}>Flip</button>
                     </div>
                 </div>
             );
