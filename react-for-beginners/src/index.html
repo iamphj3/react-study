@@ -11,10 +11,13 @@
 
         function App() {
             const [counter, modifier] = React.useState(0);
+            const onClick = () => {
+                modifier(counter+1); // 업데이트 후 리렌더링됨
+            }
             return (
                 <div>
                     <h3>Total clicks: {counter}</h3>
-                    <button>Click me</button>
+                    <button onClick={onClick}>Click me</button>
                 </div>
             );
         }
