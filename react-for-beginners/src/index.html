@@ -10,9 +10,10 @@
         const root = document.getElementById("root");
 
         function App() {
-            const [counter, modifier] = React.useState(0);
+            const [counter, setCounter] = React.useState(0);
             const onClick = () => {
-                modifier(counter+1); // 업데이트 후 리렌더링됨
+               // setCounter(counter+1); // 업데이트 후 리렌더링됨. 직접 값 설정
+                setCounter((current) => current + 1); // 함수를 통해 현재 state를 얻어서 다음 state 반영
             }
             return (
                 <div>
