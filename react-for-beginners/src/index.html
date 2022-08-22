@@ -8,17 +8,24 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         const root = document.getElementById("root");
-
         function App() {
-            const [counter, setCounter] = React.useState(0);
-            const onClick = () => {
-               // setCounter(counter+1); // 업데이트 후 리렌더링됨. 직접 값 설정
-                setCounter((current) => current + 1); // 함수를 통해 현재 state를 얻어서 다음 state 반영
-            }
+            const [minutes, setMinutes] = React.useState();
+            const onChange = (event) => {
+                setMinutes(event.target.value);
+            };
             return (
                 <div>
-                    <h3>Total clicks: {counter}</h3>
-                    <button onClick={onClick}>Click me</button>
+                    <h1 className="hi">Super Converter</h1>
+                    <label htmlFor="minutes">Minutes</label>
+                    <input 
+                        value={minutes}
+                        id="minutes"
+                        placeholder="Minutes"
+                        type="number"
+                        onChange={onChange}
+                    />
+                    <h4>You want to convert {minutes}</h4>
+                    <input placeholder="Hours" type="number" />
                 </div>
             );
         }
