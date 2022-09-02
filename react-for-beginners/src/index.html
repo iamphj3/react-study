@@ -7,26 +7,27 @@
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-        function Btn( {banana, big} ) {
-            console.log(banana, big);
+        function Btn( {text, changeValue} ) {
             return <button
+                onClick={changeValue}
                 style={{
                     backgroundColor: "tomato",
                     color: "white",
                     padding: "10px 20px",
                     border: 0,
                     borderRadius: 10,
-                    fontSize: big ? 18 : 16,
                 }}
             >
-                {banana}
+                {text}
             </button>             
         }
         function App() {
+            const [value, setValue] = React.useState("Save Changes");
+            const changeValue = () => setValue("Revert Changes");
             return (
                 <div>
-                    <Btn banana="Save Changes" big={true} />
-                    <Btn banana="continue"  big={false}/>
+                    <Btn text={value} changeValue={changeValue} />
+                    <Btn text="Continue"/>
                 </div>
             );
         }
