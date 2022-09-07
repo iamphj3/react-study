@@ -5,7 +5,7 @@ function App() {
   const [toDos, setToDos] = useState([]);
   const onChange = (event) => setToDo(event.target.value);
   const onSubmit = (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     if (toDo === "") {
       return;
     }
