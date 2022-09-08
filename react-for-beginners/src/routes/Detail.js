@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import Movies from "../components/Movies";
 
 function Detail() {
     const [loading, setLoading] =  useState(true);
@@ -25,18 +24,13 @@ function Detail() {
                 <h1>Loading details...</h1>
             ) : (
                 <div>
-                    <h1>Detail</h1>
-                    <Movies
-                        key={details.id}
-                        id={details.id}
-                        coverImg={details.medium_cover_image}
-                        title={details.title}
-                        summary={details.summary}
-                        genres={details.genres}
-                    />
+                    <h1>{details.title}</h1>
+                    <img src={details.large_cover_image} alt="cover_image"></img>
+                    <p> 장르 : {details.genres}</p>
                     <p> 평점 : {details.rating}</p>
                     <p> 언어 : {details.language} </p>
                     <p> 상영시간 : {details.runtime}분 </p>
+                    <p> {details.description_full} </p>
                 </div>
             )}
         </div>
