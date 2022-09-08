@@ -6,7 +6,8 @@ function Movie() {
     return (<Router>
         {/* 한 번에 하나의 route만 렌더링하기 위해 Routes 사용 (이전 버전 : switch) */}
         <Routes>
-            <Route path="/movie" element={<Detail />}>
+            {/* :id -> 변수 !! */}
+            <Route path="/movie/:id" element={<Detail />}>
             </Route>
             <Route path="/" element={<Home />}>
             </Route>
