@@ -39,10 +39,11 @@ function Detail() {
 export default Detail;
 
 
-// 1. loading 넣기
-// 2. movies를 state에 올리기
-// 3. detail 보여주기
+// 1. loading 넣기 -> OK
+// 2. movies를 state에 올리기 -> OK
+// 3. detail 보여주기 > OK
 // 4. 네비게이션 바 - home, admin 페이지 넣기
+// 5. CSS 입히기
 
 // #Callenge!
 // 1. home에서 해줬던 로딩을 detail 화면에 해주기 -> OK
