@@ -1,0 +1,25 @@
+.movies {
+
+}
+.movies_img:hover {
+    filter: brightness(0.5);
+}
+.movies_title {
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.movies_year{
+    padding-bottom: 10px;
+}
+.movies_summary {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.movies_genres {
+    list-style: none;
+    margin-bottom: 10px;
+
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+}
